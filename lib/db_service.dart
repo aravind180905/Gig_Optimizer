@@ -9,7 +9,7 @@ if (_db != null) return _db!;
 
 _db = await openDatabase(
   join(await getDatabasesPath(), 'gig_data.db'),
-  version: 2, // ✅ IMPORTANT (upgrade DB)
+  version: 2, 
   onCreate: (db, version) async {
     await db.execute('''
     CREATE TABLE trip_data(
@@ -24,7 +24,7 @@ _db = await openDatabase(
     ''');
   },
 
-  // ✅ HANDLE EXISTING USERS
+  // HANDLE EXISTING USERS
   onUpgrade: (db, oldVersion, newVersion) async {
     if (oldVersion < 2) {
       await db.execute("ALTER TABLE trip_data ADD COLUMN total_distance REAL");
@@ -39,7 +39,7 @@ return _db!;
 
 }
 
-// ✅ INSERT
+//  INSERT
 static Future<void> insertData(
 double fare,
 double totalDistance,
@@ -56,14 +56,14 @@ await db.insert(
     'total_distance': totalDistance,
     'first_mile': firstMile,
     'last_mile': lastMile,
-    'platform': platform, // ✅ FIXED
+    'platform': platform,
     'created_at': DateTime.now().toIso8601String(),
   },
 );
 
 }
 
-// ✅ GET DATA
+//  GET DATA
 static Future<List<Map<String, dynamic>>> getAllData() async {
 final db = await getDb();
 

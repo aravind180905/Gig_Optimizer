@@ -52,7 +52,7 @@ Provider.of<OrderProvider>(context, listen: false).dispose();
 super.dispose();
 }
 
-// ✅ PLATFORM → LOGO
+//  PLATFORM → LOGO
 String getLogo(String platform) {
 final name = platform.toLowerCase();
 
@@ -83,7 +83,7 @@ return Scaffold(
     children: [
       const SizedBox(height: 10),
 
-      // ✅ LIVE DATA
+      //  LIVE DATA
       Container(
         width: double.infinity,
         padding: const EdgeInsets.all(12),
@@ -104,7 +104,7 @@ return Scaffold(
 
       const SizedBox(height: 10),
 
-      // ✅ START / STOP
+      //  START / STOP
       ElevatedButton(
         onPressed: () {
           if (!isListening) {
@@ -126,7 +126,7 @@ return Scaffold(
 
       const SizedBox(height: 10),
 
-      // ✅ ORDER LIST
+      //  ORDER LIST
       Expanded(
         child: provider.orders.isEmpty
             ? const Center(
@@ -152,7 +152,7 @@ return Scaffold(
                     color: Colors.green.shade50,
 
                     child: ListTile(
-                      // ✅ LOGO
+                      // LOGO
                       leading: Image.asset(
                         getLogo(order.platform),
                         width: 40,
@@ -160,7 +160,7 @@ return Scaffold(
                         fit: BoxFit.contain,
                       ),
 
-                      // ✅ TITLE + BEST TAG
+                      //  TITLE + BEST TAG
                       title: Row(
                         children: [
                           Text(
@@ -173,7 +173,7 @@ return Scaffold(
                         ],
                       ),
 
-                      // ✅ DETAILS
+                      // DETAILS
                       subtitle: Text(
                         "Total: ${order.distance} KM\n"
                         "First Mile: ${order.pickup} KM\n"
@@ -181,7 +181,7 @@ return Scaffold(
                         "₹/KM: $rate",
                       ),
 
-                      // ✅ RIGHT SIDE
+                      // RIGHT SIDE
                       trailing: Column(
                         mainAxisAlignment:
                             MainAxisAlignment.center,
@@ -219,7 +219,7 @@ return Scaffold(
               ),
       ),
 
-      // ✅ ACCESSIBILITY
+      // ACCESSIBILITY
       ElevatedButton(
         onPressed: () {
           PlatformChannel.openAccessibilitySettings();

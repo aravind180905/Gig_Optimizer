@@ -8,7 +8,6 @@ final OrderModel order;
 
 const OrderCard({super.key, required this.order});
 
-// ✅ PLATFORM → LOGO MAPPING
 String getLogo(String platform) {
 final name = platform.toLowerCase();
 
@@ -38,11 +37,10 @@ return Card(
   margin: const EdgeInsets.all(10),
   child: Padding(
     padding: const EdgeInsets.all(15),
-    child: Row( // ✅ CHANGED TO ROW
+    child: Row( 
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        // ✅ LOGO
         Image.asset(
           getLogo(order.platform),
           width: 50,
@@ -52,7 +50,6 @@ return Card(
 
         const SizedBox(width: 12),
 
-        // ✅ DETAILS
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

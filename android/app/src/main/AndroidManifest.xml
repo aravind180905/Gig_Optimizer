@@ -8,7 +8,7 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 
-        <!-- ✅ Accessibility Service -->
+        <!--  Accessibility Service -->
        <service
                 android:name=".MyAccessibilityService"
                 android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
@@ -23,12 +23,12 @@
                     android:resource="@xml/accessibility_config"/>
         </service>
 
-        <!-- ✅ Overlay Service (Optional - if used) -->
+        <!-- Overlay Service (Optional - if used) -->
         <service
             android:name=".OverlayService"
             android:exported="false" />
 
-        <!-- ✅ Main Activity -->
+        <!--  Main Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

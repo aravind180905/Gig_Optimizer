@@ -28,10 +28,10 @@ void startListening() {
     nativeMessage =
         "₹ $fare | Total: $totalMile | First: $firstMile | Last: $lastMile";
 
-    // ✅ SAVE TO SQLITE
+    // SAVE TO SQLITE
     await DBService.insertData(fare, totalMile, firstMile, lastMile, packageName);
 
-    // ✅ ADD TO UI
+    //  ADD TO UI
     final order = OrderModel(
       platform: packageName,
       fare: fare,
@@ -51,7 +51,7 @@ void startListening() {
   });
 }
 
-  // ✅ LOAD FROM SQLITE ON START
+  // LOAD FROM SQLITE ON START
 Future<void> loadFromDB() async {
   final data = await DBService.getAllData();
 
@@ -69,14 +69,14 @@ Future<void> loadFromDB() async {
   notifyListeners();
 }
 
-  // ✅ STOP LISTENING-
+  //  STOP LISTENING-
   @override
   void dispose() {
     _subscription?.cancel();
     super.dispose();
   }
 
-  // ✅ MANUAL ADD (your existing)
+  // MANUAL ADD (your existing)
   void addOrder(OrderModel order) {
     orders.insert(0, order);
     notifyListeners();
