@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="Gig">Order Intelligence</string>
+
+    <string name="accessibility_description">
+        This service is used to support user-enabled features inside the app.
+    </string>
+
+</resources>
